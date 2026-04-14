@@ -17,4 +17,14 @@ public class EmpleadoPlanta extends Empleado {
     public float calcularSalarioBruto() {
         return salarioBase + calcularBonificacionCategoria() + (horasExtra * valorHoraExtra) + auxilioTransporte;
     }
+
+    @Override
+    public String toString() {
+        return "EmpleadoPlanta{" +
+                "cargo='" + cargo + '\'' +
+                ", horasExtra=" + horasExtra +
+                ", valorHoraExtra=" + valorHoraExtra +
+                ", auxilioTransporte=" + auxilioTransporte +
+                '}';
+    }
 }

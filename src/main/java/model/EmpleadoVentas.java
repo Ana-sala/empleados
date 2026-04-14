@@ -15,4 +15,12 @@ public class EmpleadoVentas extends Empleado{
         float comision = totalVentas * (porcentajeComision / 100);
         return salarioBase + calcularBonificacionCategoria() + comision;
     }
+
+    @Override
+    public String toString() {
+        return "EmpleadoVentas{" +
+                "totalVentas=" + totalVentas +
+                ", porcentajeComision=" + porcentajeComision +
+                '}';
+    }
 }

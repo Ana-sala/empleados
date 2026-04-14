@@ -1,5 +1,7 @@
 package model;
+import lombok.Getter;
 
+@Getter
 public class EmpleadoTemporal extends Empleado {
     private int diasTrabajados;
     private float valorDia;
@@ -13,5 +15,13 @@ public class EmpleadoTemporal extends Empleado {
     @Override
     public float calcularSalarioBruto() {
         return (diasTrabajados * valorDia) + calcularBonificacionCategoria();
+    }
+
+    @Override
+    public String toString() {
+        return "EmpleadoTemporal{" +
+                "diasTrabajados=" + diasTrabajados +
+                ", valorDia=" + valorDia +
+                '}';
     }
 }

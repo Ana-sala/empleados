@@ -1,9 +1,14 @@
 package model;
+
 import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Optional;
 
+@Getter
+@AllArgsConstructor
 public class Empresa {
     private String nombre;
     private ArrayList<Empleado> listaEmpleados = new ArrayList<>();

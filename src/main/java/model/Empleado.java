@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor // Crea el constructor con todos los atributos
 
 public abstract class Empleado {
     protected String nombre, documento;
