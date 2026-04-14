@@ -5,12 +5,11 @@ import java.util.Optional;
 
 public class aplicacion {
     public static void main(String[] args) {
-        // Creamos la empresa con el nombre que pide el taller [cite: 104, 135]
         Empresa miEmpresa = new Empresa("Uniquindio");
         Scanner lector = new Scanner(System.in);
         int opcion = 0;
 
-        // Menú principal con las 9 opciones obligatorias [cite: 124, 125]
+        // Menú principal
         while (opcion != 9) {
             System.out.println("\n--- MENU DE NOMINA ---");
             System.out.println("1. Agregar Empleado Planta");
@@ -28,7 +27,7 @@ public class aplicacion {
             lector.nextLine(); // Limpiar el teclado
 
             switch (opcion) {
-                case 1: // Empleado de Planta [cite: 126]
+                case 1: // Empleado de Planta
                     System.out.print("Nombre: "); String n1 = lector.nextLine();
                     System.out.print("Documento: "); String d1 = lector.nextLine();
                     System.out.print("Edad: "); int e1 = lector.nextInt();
@@ -40,11 +39,11 @@ public class aplicacion {
                     System.out.print("Horas Extra: "); int he = lector.nextInt();
                     System.out.print("Valor Hora Extra: "); float vhe = lector.nextFloat();
 
-                    // Se agrega con el auxilio de transporte del taller [cite: 47]
+                    // Se agrega con el auxilio de transporte del taller
                     miEmpresa.agregarEmpleado(new EmpleadoPlanta(n1, d1, e1, s1, c1, 4, 4, cargo, he, vhe, 117000));
                     break;
 
-                case 2: // Empleado de Ventas [cite: 127]
+                case 2: // Empleado de Ventas
                     System.out.print("Nombre: "); String n2 = lector.nextLine();
                     System.out.print("Documento: "); String d2 = lector.nextLine();
                     System.out.print("Edad: "); int e2 = lector.nextInt();
@@ -58,7 +57,7 @@ public class aplicacion {
                     miEmpresa.agregarEmpleado(new EmpleadoVentas(n2, d2, e2, s2, c2, 4, 4, tv, pc));
                     break;
 
-                case 3: // Empleado Temporal [cite: 128]
+                case 3: // Empleado Temporal
                     System.out.print("Nombre: "); String n3 = lector.nextLine();
                     System.out.print("Documento: "); String d3 = lector.nextLine();
                     System.out.print("Edad: "); int e3 = lector.nextInt();
@@ -72,7 +71,7 @@ public class aplicacion {
                     miEmpresa.agregarEmpleado(new EmpleadoTemporal(n3, d3, e3, s3, c3, 4, 4, dt, vd));
                     break;
 
-                case 4: // Listar [cite: 129]
+                case 4: // Listar
                     System.out.println("\nLISTA GENERAL:");
                     for (Empleado emp : miEmpresa.getListaEmpleados()) {
                         System.out.println(emp.getNombre() + " (" + emp.getDocumento() + ")");
@@ -89,16 +88,16 @@ public class aplicacion {
                     );
                     break;
 
-                case 6: // El que más gana [cite: 131]
+                case 6: // El que más gana
                     miEmpresa.obtenerMayorSalario().ifPresent(e ->
                             System.out.println("El que mas gana es " + e.getNombre() + " con $" + e.calcularSalarioNeto()));
                     break;
 
-                case 7: // Nómina Total [cite: 132]
+                case 7: // Nómina Total
                     System.out.println("Nomina total de la empresa: $" + miEmpresa.calcularNominaTotal());
                     break;
 
-                case 8: // Mostrar los Records (Obligatorio) [cite: 91, 133]
+                case 8: // Mostrar los Records
                     System.out.println("\nRESUMENES DE PAGO:");
                     for (Empleado emp : miEmpresa.getListaEmpleados()) {
                         System.out.println(emp.generarResumenPago());
